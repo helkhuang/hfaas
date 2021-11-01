@@ -19,14 +19,14 @@ package com.hfaas.core.instance;
 import java.util.List;
 
 /**
- * Hfaasº¯ÊıÊµÀıÀà
+ * Hfaaså‡½æ•°å®ä¾‹ç±»
  * @author helk.huang
  * @since 2021-10-31
  * @version 1.0
  */
 public class ServiceMethod {
 	/**
-	 * º¯ÊıÃû³Æ
+	 * å‡½æ•°åç§°
 	 */
 	private String name;
 	public String getName() {
@@ -42,13 +42,13 @@ public class ServiceMethod {
 		this.params = params;
 	}
 	/**
-	 * º¯Êı²ÎÊıÁĞ±í
+	 * å‡½æ•°å‚æ•°åˆ—è¡¨
 	 */
 	private List<MethodParams> params; 
 	/**
-	 * ¹¹Ôìº¯Êı
-	 * @param name º¯ÊıÃû³Æ
-	 * @param params º¯Êı²ÎÊıÁĞ±í
+	 * æ„é€ å‡½æ•°
+	 * @param name å‡½æ•°åç§°
+	 * @param params å‡½æ•°å‚æ•°åˆ—è¡¨
 	 */
 	public ServiceMethod(String name,List<MethodParams> params){
 		this.name = name;

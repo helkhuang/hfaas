@@ -14,19 +14,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.hfaas.core.input;
+package com.hfaas.core.annotation;
 
+import static java.lang.annotation.RetentionPolicy.RUNTIME;
+
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.Target;
+
+@Retention(RUNTIME)
+@Target(ElementType.METHOD)
 /**
- * Hfaas函数服务输入数据类
- * @author helk.huang
- * @since 2021-10-31
- * @version 1.0
+ * @author ThinkPad
+ *
  */
-public class HServiceInput implements java.io.Serializable{
-
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+public @interface RPC {
 
 }

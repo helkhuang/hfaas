@@ -24,48 +24,48 @@ import com.hfaas.core.instance.ServiceMethod;
 import com.hfaas.core.output.HServiceOutput;
 
 /**
- * HfaasºËĞÄº¯Êı·şÎñ½Ó¿Ú
+ * Hfaasæ ¸å¿ƒå‡½æ•°æœåŠ¡æ¥å£
  * @author helk.huang
  * @since 2021-10-31
  * @version 1.0
  */
 public interface IHService {
 	/**
-	 * ¸ù¾İº¯Êı·şÎñÃû³Æ»ñÈ¡º¯Êı·şÎñÊµÀı
-	 * @param serviceName º¯Êı·şÎñÃû³Æ
-	 * @return º¯Êı·şÎñÊµÀı
+	 * æ ¹æ®å‡½æ•°æœåŠ¡åç§°è·å–å‡½æ•°æœåŠ¡å®ä¾‹
+	 * @param serviceName å‡½æ•°æœåŠ¡åç§°
+	 * @return å‡½æ•°æœåŠ¡å®ä¾‹
 	 */
 	public HServiceInstance getHServiceInstance(String serviceName);
 	/**
-	 * ¸ù¾İº¯Êı·şÎñÃû³Æ¡¢º¯Êı·şÎñÃüÃû¿Õ¼ä»ñÈ¡º¯Êı·şÎñÊµÀı
-	 * @param namespace º¯Êı·şÎñÃüÃû¿Õ¼ä
-	 * @param serviceName º¯Êı·şÎñÃû³Æ
-	 * @return º¯Êı·şÎñÊµÀı
+	 * æ ¹æ®å‡½æ•°æœåŠ¡åç§°ã€å‡½æ•°æœåŠ¡å‘½åç©ºé—´è·å–å‡½æ•°æœåŠ¡å®ä¾‹
+	 * @param namespace å‡½æ•°æœåŠ¡å‘½åç©ºé—´
+	 * @param serviceName å‡½æ•°æœåŠ¡åç§°
+	 * @return å‡½æ•°æœåŠ¡å®ä¾‹
 	 */
 	public HServiceInstance getHServiceInstance(String namespace,String serviceName);
 	
 	/**
-	 * Ö´ĞĞº¯Êı·şÎñ
-	 * @param serviceInstance º¯Êı·şÎñÊµÀı
-	 * @param methodName ĞèÒªÖ´ĞĞµÄº¯ÊıÃû³Æ
-	 * @param serviceInput º¯ÊıÊäÈëÊı¾İ
-	 * @return º¯Êı·şÎñÖ´ĞĞ½á¹û
+	 * æ‰§è¡Œå‡½æ•°æœåŠ¡
+	 * @param serviceInstance å‡½æ•°æœåŠ¡å®ä¾‹
+	 * @param methodName éœ€è¦æ‰§è¡Œçš„å‡½æ•°åç§°
+	 * @param serviceInput å‡½æ•°è¾“å…¥æ•°æ®
+	 * @return å‡½æ•°æœåŠ¡æ‰§è¡Œç»“æœ
 	 */
 	public HServiceOutput exactServiceMethod(HServiceInstance serviceInstance,String methodName,HServiceInput serviceInput);
 	
 	/**
-	 * ¸ù¾İº¯Êı·şÎñÃû³Æ¡¢º¯Êı·şÎñÃüÃû¿Õ¼ä»ñÈ¡¸Ã·şÎñÏÂËùÓĞº¯ÊıÊµÀı
-	 * @param namespace º¯Êı·şÎñÃüÃû¿Õ¼ä
-	 * @param serviceName º¯Êı·şÎñÃû³Æ
-	 * @return º¯ÊıÊµÀı
+	 * æ ¹æ®å‡½æ•°æœåŠ¡åç§°ã€å‡½æ•°æœåŠ¡å‘½åç©ºé—´è·å–è¯¥æœåŠ¡ä¸‹æ‰€æœ‰å‡½æ•°å®ä¾‹
+	 * @param namespace å‡½æ•°æœåŠ¡å‘½åç©ºé—´
+	 * @param serviceName å‡½æ•°æœåŠ¡åç§°
+	 * @return å‡½æ•°å®ä¾‹
 	 */
 	public List<ServiceMethod> getHServiceMethods(String namespace,String serviceName);
 	/**
-	 * ¸ù¾İº¯Êı·şÎñÃû³Æ¡¢º¯Êı·şÎñÃüÃû¿Õ¼ä¡¢º¯ÊıÃû³Æ»ñÈ¡º¯ÊıÊµÀı
-	 * @param namespace º¯Êı·şÎñÃüÃû¿Õ¼ä
-	 * @param serviceName º¯Êı·şÎñÃû³Æ
-	 * @param methodName º¯ÊıÊµÀıÃû³Æ
-	 * @return º¯ÊıÊµÀı
+	 * æ ¹æ®å‡½æ•°æœåŠ¡åç§°ã€å‡½æ•°æœåŠ¡å‘½åç©ºé—´ã€å‡½æ•°åç§°è·å–å‡½æ•°å®ä¾‹
+	 * @param namespace å‡½æ•°æœåŠ¡å‘½åç©ºé—´
+	 * @param serviceName å‡½æ•°æœåŠ¡åç§°
+	 * @param methodName å‡½æ•°å®ä¾‹åç§°
+	 * @return å‡½æ•°å®ä¾‹
 	 */
 	public ServiceMethod getHServiceMethods(String namespace,String serviceName,String methodName);
 

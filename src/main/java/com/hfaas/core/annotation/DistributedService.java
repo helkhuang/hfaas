@@ -24,7 +24,7 @@ import java.lang.annotation.Target;
 import com.hfaas.core.henum.ComputeResource;
 
 /**
- * Hfaas·Ö²¼Ê½ÔËĞĞº¯Êı
+ * Hfaasåˆ†å¸ƒå¼è¿è¡Œå‡½æ•°
  * @author helk.huang
  * @since 2021-10-31
  * @version 1.0
@@ -32,14 +32,14 @@ import com.hfaas.core.henum.ComputeResource;
 @Retention(RetentionPolicy.RUNTIME) 
 @Target(ElementType.METHOD)
 public @interface DistributedService {
-	 /**º¯ÊıÃû³Æ**/
-    public  String name = "";
-    /**º¯ÊıÃüÃû¿Õ¼ä**/
-    public String namespace="";
-    /**·Ö²¼Ê½º¯ÊıÖ´ĞĞ×îĞ¡ÊµÀı**/
-    public int minInstance = 1;
-    /**·Ö²¼Ê½º¯ÊıÖ´ĞĞ×î´óÊµÀı**/
-    public int maxInstance = 100;
-    /**·Ö²¼Ê½º¯ÊıÖ´ĞĞÀàĞÍ**/
-    public ComputeResource resource = ComputeResource.CPU;
+	 /**å‡½æ•°åç§°**/
+      String name() default "";
+    /**å‡½æ•°å‘½åç©ºé—´**/
+      String namespace () default "";
+    /**åˆ†å¸ƒå¼å‡½æ•°æ‰§è¡Œæœ€å°å®ä¾‹**/
+      int minInstance () default 1;
+    /**åˆ†å¸ƒå¼å‡½æ•°æ‰§è¡Œæœ€å¤§å®ä¾‹**/
+     int maxInstance () default 100;
+    /**åˆ†å¸ƒå¼å‡½æ•°æ‰§è¡Œç±»å‹**/
+     ComputeResource resource() default ComputeResource.CPU;
 }

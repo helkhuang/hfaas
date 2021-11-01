@@ -17,14 +17,14 @@
 package com.hfaas.core.instance;
 
 /**
- * Hfaasº¯ÊıÊµÀı²ÎÊı
+ * Hfaaså‡½æ•°å®ä¾‹å‚æ•°
  * @author helk.huang
  * @since 2021-10-31
  * @version 1.0
  */
 public class MethodParams {
 	/**
-	 * ²ÎÊıÃû³Æ
+	 * å‚æ•°åç§°
 	 */
 	private String name;
 	public String getName() {
@@ -46,18 +46,18 @@ public class MethodParams {
 		this.description = description;
 	}
 	/**
-	 * ²ÎÊıÀàĞÍ
+	 * å‚æ•°ç±»å‹
 	 */
 	private String type;
 	/**
-	 * ²ÎÊıÃèÊö
+	 * å‚æ•°æè¿°
 	 */
 	private String description;
 	/**
-	 * ¹¹Ôìº¯Êı
-	 * @param name ²ÎÊıÃû³Æ
-	 * @param type ²ÎÊıÀàĞÍ
-	 * @param description ²ÎÊıÃèÊö
+	 * æ„é€ å‡½æ•°
+	 * @param name å‚æ•°åç§°
+	 * @param type å‚æ•°ç±»å‹
+	 * @param description å‚æ•°æè¿°
 	 */
 	public MethodParams(String name,String type,String description){
 		this.name = name;

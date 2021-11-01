@@ -17,11 +17,24 @@
 package com.hfaas.core.output;
 
 /**
- * Hfaasº¯Êı·şÎñÊä³ö½á¹ûÊı¾İÀà
+ * Hfaaså‡½æ•°æœåŠ¡è¾“å‡ºç»“æœæ•°æ®ç±»
  * @author helk.huang
  * @since 2021-10-31
  * @version 1.0
  */
-public class HServiceOutput {
+public class HServiceOutput implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	/**åºåˆ—åŒ–æ•°æ®*/
+	private byte[] data;
+	/**åºåˆ—åŒ–æ•°æ®é•¿åº¦*/
+	private int length;
+	
+	public  HServiceOutput(byte[] data,int length){
+		this.data = data;
+		this.length = length;
+	}
 }

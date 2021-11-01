@@ -17,21 +17,21 @@
 package com.hfaas.core.henum;
 
 /**
- * ¼ÆËã¸ºÔØ×ÊÔ´Ã¶¾ÙÀà
+ * è®¡ç®—è´Ÿè½½èµ„æºæšä¸¾ç±»
  * @author helk.huang
  * @since 2021-10-31
  * @version 1.0
  */
 public enum ComputeResource {
 	GPU("GPU"),CPU("GPU"),FPGA("GPU");
-	/**×ÊÔ´ÀàĞÍ**/
+	/**èµ„æºç±»å‹**/
 	private String type;
 	ComputeResource(String type){
 		this.type = type;
 	}
 	/**
-	 * »ñÈ¡¼ÆËã×ÊÔ´ÀàĞÍ
-	 * @return ·µ»Ø¼ÆËã×ÊÔ´ÀàĞÍ
+	 * è·å–è®¡ç®—èµ„æºç±»å‹
+	 * @return è¿”å›è®¡ç®—èµ„æºç±»å‹
 	 */
 	public String getType(){
 		return type;
