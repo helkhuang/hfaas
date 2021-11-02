@@ -42,6 +42,7 @@ import io.netty.handler.codec.http.cookie.ServerCookieEncoder;
 import io.netty.handler.ssl.SslHandler;
 import io.netty.handler.stream.ChunkedFile;
 import io.netty.util.CharsetUtil;
+import io.netty.util.internal.StringUtil;
 
 /**
  * 请求处理器类
@@ -202,7 +203,9 @@ final class RequestHandler {
         Map<String, String> responseHeaders = HttpContextHolder.getResponse().getHeaders();
         Set<Entry<String, String>> headersEntrySet = responseHeaders.entrySet();
         for(Entry<String, String> entry : headersEntrySet) {
-            response.headers().add(entry.getKey(), entry.getValue());
+        	if(entry.getValue()!=null&&!StringUtil.isNullOrEmpty(entry.getValue())){
+        		response.headers().add(entry.getKey(), entry.getValue());
+        	}
         }
         response.headers().setInt("Content-Length", response.content().readableBytes());
         return HttpContextHolder.getResponse().getChannelHandlerContext().writeAndFlush(response);
@@ -264,8 +267,8 @@ final class RequestHandler {
         if(paramStartIndex > 0) {
             lookupPath = lookupPath.substring(0, paramStartIndex);
         }
-
-        Map<String, ControllerMapping> mappings = this.getMappings(requestInfo.getRequest().method().name());
+        String name = requestInfo.getRequest().method().name();
+        Map<String, ControllerMapping> mappings = this.getMappings(name);
         if (mappings == null || mappings.size() == 0) {
             return null;
         }

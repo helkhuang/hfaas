@@ -8,6 +8,7 @@
 
 // Apply the java-library plugin to add support for Java Library
 apply plugin: 'java-library'
+version='0.0.1'
 
 // In this section you declare where to find the dependencies of your project
 repositories {
@@ -26,10 +27,28 @@ dependencies {
     implementation 'com.google.guava:guava:20.0'
     implementation 'io.netty:netty-all:4.1.69.Final'
     implementation 'com.alibaba:fastjson:1.2.78'
-    implementation 'org.slf4j:slf4j-api:2.0.0-alpha5'
+    implementation 'org.slf4j:slf4j-api:1.7.32'
+    testImplementation 'org.slf4j:slf4j-log4j12:1.7.32'
     implementation 'org.ow2.asm:asm:9.2'
+    implementation 'log4j:log4j:1.2.17'
+    compile 'org.slf4j:slf4j-simple:1.7.32'
 
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
+}
+
+
+
+task fatJar(type: Jar) {
+    manifest {
+        attributes 'Main-Class': "com.hfaas.core.starter.ServiceStarter"
+    }
+    baseName = "$project.name"
+    from { configurations.compileClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
+
+tasks.withType(JavaCompile) {  
+    options.encoding = "UTF-8"  
 }
 

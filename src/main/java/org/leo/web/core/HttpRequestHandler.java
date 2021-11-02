@@ -32,7 +32,8 @@ final class HttpRequestHandler extends SimpleChannelInboundHandler<FullHttpReque
 
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, FullHttpRequest request) throws Exception {
-        if(WebServer.getIgnoreUrls().contains(request.uri())) {
+        System.out.println("request is:"+request);
+    	if(WebServer.getIgnoreUrls().contains(request.uri())) {
             return;
         }
 //        if (request instanceof HttpContent) {
