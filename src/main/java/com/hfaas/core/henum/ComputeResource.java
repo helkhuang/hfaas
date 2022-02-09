@@ -23,7 +23,7 @@ package com.hfaas.core.henum;
  * @version 1.0
  */
 public enum ComputeResource {
-	GPU("GPU"),CPU("GPU"),FPGA("GPU");
+	GPU("GPU"),CPU("CPU"),FPGA("FPGA");
 	/**资源类型**/
 	private String type;
 	ComputeResource(String type){
